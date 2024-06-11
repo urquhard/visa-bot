@@ -22,7 +22,7 @@ def schedule_appointment():
     driver.get(url)
     
     sleep(10)
-    flag = 0
+    flag = False
     
     
     try:   
@@ -51,7 +51,7 @@ def schedule_appointment():
             WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, "bookBtn")))
             driver.find_element(By.ID, "bookBtn").click()
             print("Appointment scheduled")
-            flag = 1
+            flag = True
         # Do something with elem
     except:
         print("Element not found or took too long to load.")
